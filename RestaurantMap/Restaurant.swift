@@ -165,4 +165,14 @@ struct RestaurantList {
             type: 200
         )
     ]
+    
+    static var categoryArray: [String] {
+        var categoryList = RestaurantList.restaurantArray.compactMap { restaurant in
+            restaurant.category
+        }
+        let categorySet = Set(categoryList)
+        categoryList = Array(categorySet)
+        
+        return categoryList
+    }
 }
