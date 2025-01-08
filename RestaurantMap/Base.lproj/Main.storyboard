@@ -17,18 +17,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uH2-FH-69k">
-                                <rect key="frame" x="76" y="362" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uH2-FH-69k">
+                                <rect key="frame" x="0.0" y="142" width="393" height="676"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mLP-Hv-av9">
+                                <rect key="frame" x="8" y="103" width="377" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="filteringData:" destination="BYZ-38-t0r" eventType="valueChanged" id="SiC-Kt-RcR"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uH2-FH-69k" firstAttribute="top" secondItem="mLP-Hv-av9" secondAttribute="bottom" constant="8" id="ONf-qQ-zaN"/>
+                            <constraint firstItem="mLP-Hv-av9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OVX-m3-h09"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uH2-FH-69k" secondAttribute="trailing" id="QAM-TQ-s45"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uH2-FH-69k" secondAttribute="bottom" id="RFa-ln-6xG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mLP-Hv-av9" secondAttribute="trailing" constant="8" id="eHe-iT-XXw"/>
+                            <constraint firstItem="uH2-FH-69k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pkg-us-xza"/>
+                            <constraint firstItem="mLP-Hv-av9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="wfI-U0-CUn"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xV7-aT-RfY"/>
                     <connections>
-                        <outlet property="mapView" destination="uH2-FH-69k" id="Xch-6g-4h1"/>
+                        <outlet property="mapView" destination="uH2-FH-69k" id="zsG-yr-RSC"/>
+                        <outlet property="segmentControl" destination="mLP-Hv-av9" id="Y1a-V6-qj1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
